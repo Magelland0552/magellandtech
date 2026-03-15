@@ -556,46 +556,397 @@
       color: #94a3b8;
     }
 
-    /* responsive */
-    @media (max-width: 750px) {
-      header {
+    /* ===== RESPONSIVE DESIGN FOR ALL DEVICES ===== */
+/* Add this at the end of your CSS file */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* Header */
+    header {
+        padding: 15px 20px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-      .header-inner {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      nav ul {
+        text-align: center;
+    }
+    
+    .brand span {
+        font-size: 1.8rem;
+    }
+    
+    .top-right-logo img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+    
+    nav ul {
         gap: 1rem;
         margin-right: 0;
         flex-wrap: wrap;
-      }
-      .hero-grid {
-        flex-direction: column;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+    }
+    
+    /* Hero section */
+    .hero {
+        padding: 3rem 1rem;
+    }
+    
+    .hero-grid {
+        gap: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subhead {
+        font-size: 1rem;
+    }
+    
+    .profile-pic {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .btn, .btn-outline {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
         text-align: center;
-      }
-      .btn-outline {
+    }
+    
+    .btn-outline {
         margin-left: 0;
-        margin-top: 1rem;
-      }
-      .exp-item {
+    }
+    
+    /* Combined container */
+    .combined-container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    .combined-container .data-card,
+    .combined-container .voucher-container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .combined-container .data-card .data-price {
+        font-size: 2rem;
+    }
+    
+    .combined-container .data-card .data-amount {
+        font-size: 1.5rem;
+    }
+    
+    .combined-container .voucher-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* Skills grid */
+    .skills-grid {
+        gap: 0.8rem;
+    }
+    
+    .skill-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Projects grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    /* Experience */
+    .exp-item {
         flex-direction: column;
         gap: 0.5rem;
-      }
+        padding: 1.5rem;
     }
+    
+    .exp-year {
+        min-width: auto;
+    }
+    
+    /* Contact section */
+    .contact-flex {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .contact-detail {
+        justify-content: center;
+    }
+    
+    .social-links {
+        text-align: center;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
 
-    /* misc */
-    img {
-      display: block;
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    header {
+        padding: 15px 25px;
     }
-    /* placeholder for missing images */
-    img[src="da.jpg"], img[src="dd.jpg"], img[src="blog1.jpg"] {
-      background: #1f2a3f;
-      min-height: 100px;
+    
+    .brand span {
+        font-size: 2rem;
     }
+    
+    .top-right-logo img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .profile-pic {
+        width: 400px;
+        height: 250px;
+    }
+    
+    .combined-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .combined-container .data-card,
+    .combined-container .voucher-container {
+        width: 100%;
+    }
+    
+    .btn, .btn-outline {
+        padding: 0.7rem 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-flex {
+        padding: 2rem;
+    }
+}
 
-  
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    header {
+        padding: 15px 30px;
+    }
+    
+    .top-right-logo img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .profile-pic {
+        width: 450px;
+        height: 260px;
+    }
+    
+    .combined-container {
+        max-width: 95%;
+        gap: 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .combined-container {
+        max-width: 95%;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .combined-container {
+        max-width: 1100px;
+    }
+    
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .profile-pic {
+        width: 300px;
+        height: 180px;
+    }
+    
+    .combined-container {
+        padding: 1rem;
+    }
+}
+
+/* High-resolution screens (Retina displays) */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+    /* Optional: Add higher resolution image adjustments if needed */
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    header, footer, .btn, .social-links {
+        display: none;
+    }
+    
+    .combined-container, .voucher-container, .data-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+    }
+}
+
+/* Fix for very small devices (less than 400px) */
+@media only screen and (max-width: 400px) {
+    .brand span {
+        font-size: 1.5rem;
+    }
+    
+    .top-right-logo img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    nav ul {
+        gap: 0.8rem;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .custom-heading {
+        font-size: 1.8rem;
+    }
+    
+    .combined-container .data-card .data-price {
+        font-size: 1.8rem;
+    }
+    
+    .combined-container .data-card .data-amount {
+        font-size: 1.3rem;
+    }
+    
+    .skill-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .skill-item i {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet landscape mode */
+@media only screen and (min-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 3rem 2rem;
+    }
+    
+    .profile-pic {
+        width: 400px;
+        height: 230px;
+    }
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .btn, .data-btn, .voucher-purchase-btn, nav a {
+        padding: 12px 20px; /* Larger touch targets */
+    }
+    
+    nav ul {
+        gap: 2rem; /* More space for touch */
+    }
+}
