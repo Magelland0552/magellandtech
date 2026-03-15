@@ -1,0 +1,601 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+.custom-heading {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  letter-spacing: -0.02em;
+}
+    
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #010e2b;      /* dark background as requested */
+      color: white;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: #030325;           /* original green */
+    }
+
+    /* ----- header (dark, with logo right) ----- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #020617;       /* original header bg */
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    /* LEFT side: empty but we push nav to left? we want logo at right corner, 
+       so we keep left side minimal, but we also need a site identity? 
+       Actually original request: "logo at the top-right corner" — we put logo image on right */
+    .brand {
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: white;
+      letter-spacing: -0.02em;
+    }
+    .brand span {
+      color: #1ef5bf;
+      font-weight: 10000;
+      font-size: 2.2rem;
+    }
+
+    /* right side logo (image) */
+    .top-right-logo {
+      display: flex;
+      align-items: center;
+    }
+    .top-right-logo img {
+
+    border-radius: 50%;  /* This makes it circular */
+
+      width: 120px;
+      height: 120px;
+      border-radius: 2px 30px 12px 38;          /* right‑angle square – no rounding */
+      object-fit: cover;
+      border: 2px 4px 30px solid #1ef5bf;
+      background: #0f172a;
+    }
+ .top-left-logo {
+      display: flex;
+      align-items: center;
+    }
+    .top-left-logo img {
+
+    border-radius: 50%;  /* This makes it circular */
+
+      width: 220px;
+      height: 220px;
+      border-radius: 2px 30px 12px 38;          /* right‑angle square – no rounding */
+      object-fit: cover;
+      border: 2px 4px 30px solid #1ef5bf;
+      background: #0f172a;
+    }
+    /* navigation – inline before the logo */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      margin-right: 2rem;
+    }
+    nav a {
+      color: #f1f5f9;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover {
+      border-bottom-color: #1ef5bf;
+      color: white;
+    }
+
+    /* ----- hero (dark gradient) ----- */
+    .hero {
+      text-align: left;           /* but we keep container flex for alignment */
+      padding: 5rem 2rem;
+      background: linear-gradient(#0f172a, #020617);
+    }
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+    .hero-content {
+      flex: 1 1 450px;
+    }
+    .badge {
+      background: #22c55e20;
+      color: #1ef5bf;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      border: 1px solid #22c55e40;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero-content .subhead {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 550px;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+    /* profile image – right angle square */
+    .profile-pic {
+      width: 500px;
+      height: 280px;
+      border-radius: 0;            /* right‑angle square */
+      background: #1e293b;
+      border: 4px solid #a7c4b2;
+      box-shadow: 1px 3px 30px 1px rgb(162, 228, 222);
+      overflow: hidden;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1ef5bf;
+      color: #020617;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      border: none;
+      transition: 0.2s;
+      font-weight: 700;
+    }
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1.5px solid #334155;
+      margin-left: 1rem;
+    }
+    .btn-outline:hover {
+      border-color: #1ef5bf;
+      background: #1e293b;
+    }
+    .btn:hover {
+      background: #1ef5bf;
+      transform: translateY(-2px);
+    }
+
+    /* container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      box-shadow: 1px 3px 30px 1px rgb(162, 228, 222);
+    }
+
+    /* sections */
+    section {
+      padding: 4rem 2rem;
+    }
+    .section-alt {
+      background: #0f172a;        /* slightly lighter dark */
+     }
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .skill-item {
+      background: #111827;
+      padding: 0.7rem 1.5rem 0.7rem 1rem;
+      border-radius: 60px;
+      border: 1px solid #1e293b;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+    .skill-item i {
+      color: #1ef5bf;
+      font-size: 1.2rem;
+    }
+
+    /* project cards (dark) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #010b20;
+      border-radius: 18px;
+      padding: 1.8rem;
+      border: 1px solid #1e293b;
+      transition: 0.2s;
+    }
+    .project-card:hover {
+      border-color: hsl(170, 86%, 54%);
+      box-shadow: 0 20px 25px -12px #22c55e20;
+    }
+    .project-icon {
+      background: #48c07420;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: #3f7996;
+      font-size: 1.8rem;
+    }
+    .project-card h3 {
+      margin-bottom: 0.75rem;
+    }
+    .project-card p {
+      color: #9ca3af;
+      margin-bottom: 1.5rem;
+    }
+    .tech-tag {
+      display: inline-block;
+      background: #041527;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #27e0e0;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* experience (dark cards) */
+    .exp-item {
+      display: flex;
+      gap: 1.8rem;
+      background: #010816;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      border: 1px solid #1e293b;
+      margin-bottom: 1rem;
+    }
+    .exp-year {
+      font-weight: 600;
+      color: #1ef5bf;
+      min-width: 100px;
+    }
+    .exp-detail p {
+      color: #94a3b8;
+    }
+   /* Combined container - holds both elements side by side */
+.combined-container {
+    display: flex;
+    flex-direction: row; /* Left to right */
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: transparent; /* Or set a background if you want */
+    align-items: stretch;
+    box-shadow: 1px 3px 30px 1px rgb(162, 228, 222);
+      overflow: hidden;
+}
+
+/* Data card - left side (will be on the left) */
+.combined-container .data-card {
+    flex: 1;
+    margin: 0;
+    max-width: none;
+    background: linear-gradient(145deg, #111827, #0f172a);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Voucher container - right side (will be on the right) */
+.combined-container .voucher-container {
+    flex: 1;
+    margin: 0;
+    max-width: none;
+    background: linear-gradient(145deg, #111827, #0f172a);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 3px 30px 1px rgb(21, 75, 70);
+       
+}
+
+/* Make both containers equal height */
+.combined-container > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Data card inner elements styling */
+.combined-container .data-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.combined-container .data-card .data-price {
+    color: #22c55e;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.combined-container .data-card .data-amount {
+    color: #fbbf24;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.combined-container .data-card .data-validity {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1e293b;
+    text-align: center;
+      overflow: hidden;
+}
+
+.combined-container .data-card .data-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background: #22c55e;
+    color: rgb(3, 3, 46);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.combined-container .data-card .data-btn:hover {
+    background: #15ecf3;
+}
+
+/* Voucher container inner elements styling */
+.combined-container .voucher-container h1 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.combined-container .voucher-container .voucher-subtitle {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    
+}
+
+.combined-container .voucher-field-group {
+    margin-bottom: 1.5rem;
+}
+
+.combined-container .voucher-field-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+}
+
+.combined-container .voucher-field-group input {
+    width: 100%;
+    padding: 0.8rem;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: rgb(3, 3, 37);
+    
+    
+}
+
+.combined-container .voucher-purchase-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #0aeb6f;
+    color: rgb(3, 3, 46);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.combined-container .voucher-purchase-btn:hover {
+    background: #15ecf3;
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 768px) {
+    .combined-container {
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .combined-container .data-card,
+    .combined-container .voucher-container {
+        width: 100%;
+    }
+}
+    /* contact section (dark) */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: #111827;
+      padding: 3rem;
+      border-radius: 30px;
+      border: 1px solid #1e293b;
+    }
+    .contact-info {
+      flex: 1 1 250px;
+    }
+    .contact-info h3 {
+      font-size: 1.8rem;
+    }
+    .contact-detail {
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-detail i {
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #1ef5bf;
+    }
+    .social-links a {
+      display: inline-flex;
+      margin-right: 1rem;
+      background: #1e293b;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 1.2rem;
+      border: 1px solid #334155;
+      transition: 0.2s;
+    }
+    .social-links a:hover {
+      background: #1ef5bf;
+      color: #020617;
+    }
+
+    /* form inside contact */
+    .contact-form {
+      flex: 2 1 300px;
+      background: #0f172a;
+      border-radius: 30px;
+      padding: 2rem;
+    }
+    .contact-form h3 {
+      margin-bottom: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 1rem;
+      border-radius: 40px;
+      border: 1px solid #1e293b;
+      background: #111827;
+      color: white;
+      width: 100%;
+    }
+    .contact-form textarea {
+      border-radius: 28px;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: #020617;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+    /* responsive */
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .header-inner {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul {
+        gap: 1rem;
+        margin-right: 0;
+        flex-wrap: wrap;
+      }
+      .hero-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+      .exp-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    /* misc */
+    img {
+      display: block;
+    }
+    /* placeholder for missing images */
+    img[src="da.jpg"], img[src="dd.jpg"], img[src="blog1.jpg"] {
+      background: #1f2a3f;
+      min-height: 100px;
+    }
+
+  
